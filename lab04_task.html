@@ -8,6 +8,7 @@
 </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>lab04_task</title>
 </head>
 <body>
@@ -51,7 +52,7 @@
         <h4 class="bluetext"><i>Примітка</i></h4>
         <p>
             Теги HTML нечутливі до регістру, тобто вони можуть бути записані у верхньому або нижньому<br>
-регістрі. Наприклад, тег <div style="background: lightgray; display: inline-block;">&lt;title&gt;</div>може бути записаний як <div style="background: lightgray; display: inline-block;">&lt;title&gt;, &lt;TITLE&gt;, &lt;Title&gt;, &lt;TiTlE&gt;,</div> і т.д., і він буде<br>
+регістрі. Наприклад, тег <code style="background: lightgray; display: inline-block;">&lt;title&gt;</code>може бути записаний як <code style="background: lightgray; display: inline-block;">&lt;title&gt;, &lt;TITLE&gt;, &lt;Title&gt;, &lt;TiTlE&gt;,</code> і т.д., і він буде<br>
 працювати нормально. Найкращою практикою, однак, є запис усіх тегів у нижньому регістрі для<br>
 забезпечення узгодженості, зручності читання та інших причин.
             </p>
@@ -79,8 +80,8 @@
 <p>&lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.&lt;/p&gt;</p>
 </div>
 <p>Ви повинні переконатися, що елементи вкладені належним чином: у наступному прикладі<br>
-відкриваємо <div style="background: lightgray; display: inline-block;">p</div> елемент першим, потім елемент <div style="background: lightgray; display: inline-block;">strong</div>, потім ми закриваємо елемент <div style="background: lightgray; display: inline-block;">strong</div><br>
-першим, потім <div style="background: lightgray; display: inline-block;">p</div>. Нижче наведено приклад неправильного вкладення:</p>
+відкриваємо <code style="background: lightgray; display: inline-block;">p</code> елемент першим, потім елемент <code style="background: lightgray; display: inline-block;">strong</code>, потім ми закриваємо елемент <code style="background: lightgray; display: inline-block;">strong</code><br>
+першим, потім <code style="background: lightgray; display: inline-block;">p</code>. Нижче наведено приклад неправильного вкладення:</p>
 <div style="background-color: #dcdcdc;">
 <p>&lt;p&gt;My cat is &lt;strong&gt;very grumpy.&lt;/p&gt;&lt;/strong&gt;</p>
 </div>
@@ -88,6 +89,277 @@
 всередині чи зовні один одного. Якщо вони перекриваються так, як у прикладі вище, ваш браузер<br>
 спробує «додумати» за вас, що ви мали на увазі, і ви отримаєте непередбачуваний результат. Тож<br>
 не робіть так!</p>
-
+<h3 class="bluetext">Порожні (void) елементи</h3>
+<p>
+    Не всі елементи відповідають вищезгаданому шаблону: відкриваючий тег, контент, закриваючий<br>
+тег. Деякі елементи складаються з одного тегу і зазвичай використовуються для вставки чогось у<br>
+місце документа, де розміщені. Наприклад, елемент &lt;img&gt; вставляє картинку на сторінку в тому<br>
+самому місці, де він розташований:
+    </p>
+    <div style="background-color: #dcdcdc;">
+    <p>&lt;img src=&quot;https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png&quot;&gt;</p>
+    </div>
+    <p>Це виведе наступне:</p>
+    <img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png">
+    <h4 class="bluetext"><i>Примітка</i></h4>
+    <p>
+        У HTML немає вимоги додавати / у кінці тегу пустого елемента, наприклад: <code style="background: lightgray; display: inline-block;">&lt;img src=&quot;images/cat.jpg&quot;
+alt=&quot;cat&quot; /&gt;</code>.<br> Однак це також дійсний синтаксис, і можна зробити це, щоб HTML був валідним у XML.
+        </p>
+        <hr>
+        <h3 class="bluetext">Атрибути</h3>
+    <p>У елементів можуть бути атрибути, які виглядають так:</p>
+    <img src="https://drive.google.com/file/d/1qstuTRu13HzboxcziZG8lxJn0Uwkq3KJ/view?usp=drive_link">
+    <p>
+        Атрибути містять додаткову інформацію про елемент, яка не відображатиметься у вмісті. В даному<br>
+випадку атрибут <code style="background: lightgray; display: inline-block;">class</code> дозволяє дати елементу ідентифікаційне ім&#39;я, яке надалі може бути<br>
+використане для звернення до елемента з метою додати стилеве оформлення.
+        </p>
+        <p><i>Атрибут повинен мати:</i></p>
+        <ul>
+      <li>Пробіл між атрибутом та ім&#39;ям елемента (або попереднім атрибутом, якщо елемент уже<br>
+має один або кілька атрибутів).</li>
+      <li>Ім&#39;я атрибута та наступний за ним знак рівності.</li>
+      <li>Значення атрибута у подвійних &quot;&quot; або одинарних &#39;&#39; лапках.</li>
+    </ul>
+    <p><i>Наприклад</i> атрибути тегу <code style="background: lightgray; display: inline-block;">&lt;a&gt;</code></p>
+    <div style="background-color: #dcdcdc;">
+    <p>href</p>
+    </div>
+    <p>
+        У значенні цього атрибута прописується веб-адреса, на яку має вказувати посилання, куди браузер<br>
+переходить, під час кликання по ній. <i>Наприклад</i>, <code style="background: lightgray; display: inline-block;">href=&quot;https://www.mozilla.org/&quot;</code>.
+        </p>
+    <div style="background-color: #dcdcdc;">
+    <p>title</p>
+    </div>
+    <p>
+        Атрибут <code style="background: lightgray; display: inline-block;">title</code> містить текст, що надає інформацію щодо елемента. Ця інформація може, але не<br>
+обов&#39;язково, показуватися користувачеві у вигляді підказки. Наприклад, title=&quot;The Mozilla<br>
+homepage&quot; – з&#39;явиться у вигляді підказки, коли ви наведете курсор на посилання.
+        </p>
+    <div style="background-color: #dcdcdc;">
+    <p>target</p>
+    </div>
+    <p>
+        Атрибут <code style="background: lightgray; display: inline-block;">target</code> визначає контекст перегляду, який використовуватиметься для відображення<br>
+посилання. Наприклад, <code style="background: lightgray; display: inline-block;">target=&quot;_blank&quot;</code> відобразить посилання на новій вкладці. Якщо потрібно<br>
+відобразити посилання на поточній вкладці, просто опустіть цей атрибут.
+        </p>
+    <h3 class="bluetext">Бульові атрибути</h3>
+    <p>
+        Іноді ви бачитимете атрибути, написані без значення — це цілком припустимо. Такі атрибути<br>
+називаються булеві, і вони можуть мати тільки одне значення, яке збігається з його ім&#39;ям. Як<br>
+приклад візьмемо атрибут disabled, який можна призначити для формування елементів введення,<br>
+якщо ви хочете, щоб вони були відключені (неактивні), тому користувач не може вводити будь-які<br>
+дані в них.
+        </p>
+        <div style="background-color: #dcdcdc;">
+        <p>&lt;input type=&quot;text&quot; disabled=&quot;disabled&quot;&gt;</p>
+        </div>
+        <p>
+            Для стислості цілком допустимо записувати їх в так(для розуміння наведено не деактивований<br>
+елемент input, щоб дати більше розуміння того, що відбувається):
+            </p>
+<p>
+    <div style="background-color: #dcdcdc;">
+    &lt;!-- using the disabled attribute prevents the end user from entering text into the input box --&gt;<br>
+&lt;input type=&quot;text&quot; disabled /&gt;<br>
+&lt;!-- text input is allowed, as it doesn&#39;t contain the disabled attribute --&gt;<br>
+&lt;input type=&quot;text&quot; /&gt;
+</div>
+    </p>
+<h3 class="bluetext">Опускання лапок навколо значень атрибутів</h3>
+<p>
+    Якщо ви подивитесь на код багатьох інших сайтів, ви можете натрапити на низку дивних стилів<br>
+розмітки, зокрема значення атрибутів без лапок. Це дозволено за певних обставин, але також<br>
+може порушити вашу розмітку за інших обставин. Наприклад, якщо ми переглянемо наш<br>
+попередній приклад посилання, ми могли б написати базову версію лише з атрибутом <code style="background: lightgray; display: inline-block;">href</code>, як це:
+    </p>
+    <div style="background-color: #dcdcdc;">
+<p>&lt;a href=https://www.mozilla.org/&gt;favorite website&lt;/a&gt;Копіювати в буфер обміну</p>
+</div>
+<p>Однак, як тільки ми додаємо атрибут <code style="background: lightgray; display: inline-block;">title</code> таким чином, виникають проблеми:</p>
+<div style="background-color: #dcdcdc;">
+<p>&lt;a href=https://www.mozilla.org/ title=<code style="background: yellow; display: inline-block;">The Mozilla homepage</code>&gt;favorite website&lt;/a&gt;</p>
+</div>
+<p>
+    Браузер неправильно інтерпретує розмітку, сприймаючи атрибут <code style="background: lightgray; display: inline-block;">title</code> за три атрибути: атрибут title<br>
+зі значенням <code style="background: lightgray; display: inline-block;">The</code> та два логічні атрибути, <code style="background: lightgray; display: inline-block;">Mozilla</code> та <code style="background: lightgray; display: inline-block;">homepage</code>. Це призведе до помилок або<br>
+неочікуваної поведінки.
+    </p>
+    <p>&lt;a href=https://www.mozilla.org/ title=The Mozilla homepage&gt;favorite website&lt;/a&gt;</p>
+<p><b><i>Порада:</i></b> завжди використовуйте лапки в атрибутах – це дозволить уникнути подібних проблем, і,<br>
+отже, код буде більш читабельним.</p>
+<h3 class="bluetext">Структура HTML документа</h3>
+<p>Давайте подивимося, як елементи об’єднуються під час створення HTML сторінки:</p>
+<ul>
+    <pre>
+        <div style="background-color: #dcdcdc;">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en-US&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;title&gt;My test page&lt;/title&gt;
+ &lt;/head&gt;
+ </div>
+ &lt;body&gt;
+  &lt;p&gt;This is my page&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</ul>
+<p>Розглянемо детальніше елементи сторінки:</p>
+<div style="background-color: #dcdcdc;">
+<p>&lt;!DOCTYPE html&gt;</p>
+</div>
+<p>
+    Оголошення типу документа. Дуже давно, на початку розвитку HTML, тип документу<br>
+використовувався як посилання на набір правил, яким HTML-сторінка мала слідувати, щоб вона<br>
+вважалася правильною, що може означати автоматичну перевірку помилок та інші корисні речі.<br>
+Оголошення типу документа виглядало приблизно так:
+    </p>
+<p>
+    <div style="background-color: #dcdcdc;">
+    &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;<br>
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+</div>
+</p>
+<p>
+    Останнім часом тип документа є історичним артефактом, який необхідно включити, щоб решта<br>
+працювала правильно. <code style="background: lightgray; display: inline-block;">&lt;!DOCTYPE html&gt;</code> — це найкоротший рядок символів, який вважається<br>
+допустимим типом документа. Це все, що вам потрібно знати!
+    </p>
+    <div style="background-color: #dcdcdc;">
+    <p>&lt;html&gt;&lt;/html&gt;</p>
+    </div>
+<p>Елемент <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html" target="_blank" rel="noreferrer noopener">&lt;html&gt;</a> містить весь вміст на всій сторінці, і іноді його називають &quot;кореневий елемент&quot;.</p>
+<div style="background-color: #dcdcdc;">
+<p>&lt;head&gt;&lt;/head&gt;</p>
+</div>
+<p>
+    Елемент <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/head" target="_blank" rel="noreferrer noopener">&lt;head&gt;</a> виступає як контейнер для елементів, що визначають метаінформацію документа<br>
+для роботів, браузерів і пошукових систем. Цей вміст не відображається користувачу, та включає<br>
+такі речі, як ключові слова та опис сторінки, які ви хотіли б показувати в пошукових запитах, CSS<br>
+для стилізування контенту, оголошення підтримуваного набору символів та багато іншого.
+</p>
+<div style="background-color: #dcdcdc;">
+<p>&lt;meta charset=&quot;utf-8&quot;&gt;</p>
+</div>
+<p>
+    Цей елемент встановлює символьне кодування для вашого документа <b>utf-8</b>, який включає<br>
+більшість символів з усіх відомих людству мов. По суті тепер сторінка зможе відобразити будь-<br>
+який текстовий контент, який ви зможете в неї вкласти. Немає причин не встановлювати це<br>
+кодування, це також дозволить уникнути деяких проблем пізніше.
+    </p>
+    <div style="background-color: #dcdcdc;">
+<p>&lt;title&gt;&lt;/title&gt;</p>
+</div>
+<p>
+    Елемент <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/title" target="_blank" rel="noreferrer noopener">&lt;title&gt;</a> встановлює заголовок сторінки, який з&#39;являється у вкладці браузера, що<br>
+завантажує цю сторінку, також цей заголовок використовується при описі сторінки, коли сторінка<br>
+зберігається в закладках або вибраному.
+    </p>
+    <div style="background-color: #dcdcdc;">
+<p>&lt;body&gt;&lt;/body&gt;</p>
+</div>
+<p>
+    Елемент <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/body" target="_blank" rel="noreferrer noopener">&lt;body&gt;</a> містить весь контент, який будуть бачити відвідувачі сторінки: текст, зображення,<br>
+відео, ігри, аудіо, інше.
+</p>
+<h3 class="bluetext">Пробіли в HTML</h3>
+<p>
+    У наведених вище прикладах ви могли помітити, що код містить багато пробілів. Це<br>
+необов&#39;язково. Ці два фрагменти коду еквівалентні:
+    </p>
+<p>
+    <div style="background-color: #dcdcdc;">
+&lt;p&gt;Cats are silly.&lt;/p&gt;<br>
+&lt;p&gt;Cats are silly.&lt;/p&gt;
+</div>
+</p>
+<p>
+    Незалежно від того, скільки пробілів ви використовуєте у вмісті елемента HTML (який може<br>
+включати один або кілька символів пробілу, а також розриви рядків), аналізатор HTML скорочує<br>
+кожну послідовність пробілів до одного пробілу під час відтворення коду. То навіщо<br>
+використовувати так багато пробілів? Відповідь - читабельність.
+    </p>
+<p>
+    Зрозуміти, що відбувається у вашому коді, буде легше, якщо він добре відформатований. У<br>
+нашому HTML ми маємо кожен вкладений елемент із відступом на два пробіли більше, ніж той, у<br>
+якому він знаходиться. Ви вибираєте стиль форматування (наприклад, скільки пробілів для<br>
+кожного рівня відступу), але вам слід розглянути його форматування.
+    </p>
+<h3 class="bluetext">Спеціальні символи HTML (Entity)</h3>
+<p>
+    У HTML символи <code style="background: lightgray; display: inline-block;">&lt;</code>, <code style="background: lightgray; display: inline-block;">&gt;</code>, <code style="background: lightgray; display: inline-block;">&amp;</code> є спеціальними символами. Вони є частинами самого синтаксису HTML.<br>
+Отже, як включити один із цих спеціальних символів у свій текст? Наприклад, якщо ви хочете<br>
+використовувати амперсанд або знак менше, і не інтерпретувати його як код.
+    </p>
+<p>
+    Ми повинні використовувати посилання-немоніки - спеціальні коди, які відображають<br>
+спецсимволи, і можуть бути використані у необхідних позиціях. Кожне посилання-немоник<br>
+починається з амперсанда (&amp;) і завершується крапкою з комою (;).
+    </p>
+    <table border="1">
+      <tr>
+        <th>Літерний символ</th>
+        <th>Символьний еквівалент</th>
+      </tr>
+      <tr>
+        <td>&lt;</td>
+        <td>&amp;lt;</td>
+      </tr>
+      <tr>
+        <td>&gt;</td>
+        <td>&amp;gt;</td>
+      </tr>
+      <tr>
+        <td>“</td>
+        <td>&amp;quot;</td>
+      </tr>
+      <tr>
+        <td>‘</td>
+        <td>&amp;apos;</td>
+      </tr>
+      <tr>
+        <td>&amp;</td>
+        <td>&amp;amp;</td>
+      </tr>
+    </table>
+<p>У наступному прикладі ви бачите два абзаци:</p>
+<p>
+    <div style="background-color: #dcdcdc;">
+    &lt;p&gt;In HTML, you define a paragraph using the &lt;p&gt; element.&lt;/p&gt;<br>
+&lt;p&gt;In HTML, you define a paragraph using the &amp;lt;p&amp;gt; element.&lt;/p&gt;
+</div>
+    </p>
+<p>
+    Нижче ви можете помітити, що перший абзац виводиться неправильно, тому що браузер вважає,<br>
+що другий елемент <code style="background: lightgray; display: inline-block;">&lt;p&gt;</code> є початком нового абзацу! Другий абзац нашого коду виводиться<br>
+правильно, тому що ми замінили кутові дужки на посилання-немоніки.
+</p>
+<img src="https://drive.google.com/file/d/1e0X_11NNiDbrwdjTY3zrqGDE3H2NdEci/view?usp=drive_link">
+<h4 class="bluetext"><i>Примітка:</i></h4>
+<p>Таблиця всіх доступних у HTML символів-немоніків у Вікіпедії: <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references" target="_blank" rel="noreferrer noopener">List of XML and HTML character entity<br>
+references</a>.</p>
+<h3 class="bluetext">HTML коментарі</h3>
+<p>
+    HTML, як і в більшості мов програмування, є можливість писати коментарі в коді. Коментарі<br>
+ігноруються браузером та не видимі користувачеві, їх додають для того, щоб пояснити, як працює<br>
+написаний код, що роблять окремі його частини і т. д. Така практика корисна, якщо ви<br>
+повертаєтеся до коду, який давно не бачили або коли хочете передати його комусь іншому.
+</p>
+<p>
+    Щоб перетворити частину вмісту HTML-файлу на коментар, потрібно помістити її в спеціальні<br>
+маркери <code style="background: lightgray; display: inline-block;">&lt;!--</code> і <code style="background: lightgray; display: inline-block;">--&gt;</code>, наприклад:
+    </p>
+    <div style="background-color: #dcdcdc;">
+    <p>&lt;p&gt;I&#39;m not inside a comment&lt;/p&gt;<br>
+        &lt;!-- &lt;p&gt;I am!&lt;/p&gt; --&gt;
+    </p>
+    </div>
+<p>Як ви побачите нижче, перший параграф буде відображено на екрані, а другий ні.</p>
+<img src="https://drive.google.com/file/d/1eXZEiM34yCSqL9dKLr9xS-4E9PAuyem3/view?usp=drive_link">
 </body>
 </html>
